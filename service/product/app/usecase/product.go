@@ -1,9 +1,7 @@
 package usecase
 
-import "log"
-
 type IProductRepository interface {
-	Test()
+	GetName() string
 }
 
 type ProductUsecase struct {
@@ -14,7 +12,11 @@ func NewProduct(repository IProductRepository) ProductUsecase {
 	return ProductUsecase{repository: repository}
 }
 
-func (p ProductUsecase) Test() {
-	log.Println("Test Usecase")
-	p.repository.Test()
+// func (p ProductUsecase) Test() {
+// 	log.Println("Test Usecase")
+// 	p.repository.Test()
+// }
+
+func (p ProductUsecase) VerifyName() string {
+	return p.repository.GetName()
 }

@@ -6,7 +6,6 @@ import (
 )
 
 type IProductUsecase interface {
-	Test()
 }
 
 type ProductAPIHandler struct {
@@ -23,6 +22,5 @@ func NewProduct(usecase IProductUsecase) ProductAPIHandler {
 
 func (p ProductAPIHandler) Test(w http.ResponseWriter, r *http.Request) {
 	log.Println("Test API Handler")
-	p.usecase.Test()
 	w.Write([]byte("Success Test"))
 }

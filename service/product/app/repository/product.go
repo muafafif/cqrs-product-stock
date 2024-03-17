@@ -12,3 +12,7 @@ func NewProduct() ProductRepository {
 func (p ProductRepository) Test() {
 	log.Println("Test Repository")
 }
+
+func (p ProductRepository) GetName() string {
+	return ""
+}
